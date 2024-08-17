@@ -1,0 +1,27 @@
+﻿@model InterviewAssignment.Models.Order
+
+@{
+    ViewData["Title"] = "User Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center mb-4">User Details</h1>
+
+<div class="card shadow-sm border-0 rounded">
+    <div class="card-body">
+        <h4 class="card-title mb-4">Order Information</h4>
+        <dl class="row">
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+        </dl>
+    </div>
+</div>
+
+<div class="mt-4">
+    <a asp-action="Edituser" asp-route-id="@Model?.Order_id" class="btn btn-primary">Edit</a>
+    <a asp-action="Index" class="btn btn-outline-secondary ml-2">Back to List</a>
+</div>

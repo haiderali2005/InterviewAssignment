@@ -1,0 +1,33 @@
+﻿@model InterviewAssignment.Models.Order
+
+@{
+    ViewData["Title"] = "Edit User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center mb-4">Edit User</h1>
+
+<div class="card shadow-sm border-0 rounded">
+    <div class="card-body">
+        <h4 class="card-title mb-4">Edit User Details</h4>
+        <form asp-action="Edituser">
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+            <input type="hidden" asp-for="Order_id" />
+
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label">Name</label>
+                <input asp-for="Name" class="form-control" placeholder="Enter name" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="d-grid">
+                <input type="submit" value="Save" class="btn btn-primary btn-block" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="mt-4">
+    <a asp-action="Index" class="btn btn-outline-secondary">Back to List</a>
+</div>

@@ -1,0 +1,27 @@
+﻿@model InterviewAssignment.Models.OrderDetail
+
+@{
+    ViewData["Title"] = "Fruit Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center mb-4">Fruit Details</h1>
+
+<div class="card shadow-sm border-0 rounded">
+    <div class="card-body">
+        <h4 class="card-title mb-4">Order Detail Information</h4>
+        <dl class="row">
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.FruitName)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.FruitName)
+            </dd>
+        </dl>
+    </div>
+</div>
+
+<div class="mt-4">
+    <a asp-action="Editfruits" asp-route-id="@Model?.OrderDetail_id" class="btn btn-primary">Edit</a>
+    <a asp-action="Indexfruits" class="btn btn-outline-secondary ml-2">Back to List</a>
+</div>

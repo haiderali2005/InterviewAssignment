@@ -1,0 +1,41 @@
+﻿@model InterviewAssignment.Models.OrderDetail
+
+@{
+    ViewData["Title"] = "Delete Fruits";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center mb-4">Delete Fruit</h1>
+
+<div class="card shadow-sm border-0 rounded">
+    <div class="card-body">
+        <h4 class="card-title mb-4">Order Detail</h4>
+        <h3 class="text-danger">Are you sure you want to delete this?</h3>
+        <div class="mb-4">
+            <h5>Fruit Information</h5>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.FruitName)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.FruitName)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Order)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Order.Name)
+                </dd>
+            </dl>
+        </div>
+
+        <form asp-action="Deletefruits">
+            <input type="hidden" asp-for="OrderDetail_id" />
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <input type="submit" value="Delete" class="btn btn-danger" />
+                <a asp-action="Indexfruits" class="btn btn-outline-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>

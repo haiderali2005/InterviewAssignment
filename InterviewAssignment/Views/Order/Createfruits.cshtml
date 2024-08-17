@@ -1,0 +1,36 @@
+﻿@model InterviewAssignment.Models.OrderDetail
+
+@{
+    ViewData["Title"] = "Create Fruits";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center mb-4">Create New Fruit</h1>
+
+<div class="card shadow-sm border-0 rounded">
+    <div class="card-body">
+        <h4 class="card-title mb-4">Order Detail</h4>
+        <form asp-action="Createfruits">
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger mb-3"></div>
+
+            <div class="mb-3">
+                <label asp-for="Order_id" class="form-label">Select Username</label>
+                @Html.Partial("_ruit", ViewData["orderz"])
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="FruitName" class="form-label">Fruit Name</label>
+                <input asp-for="FruitName" class="form-control" placeholder="Enter fruit name" />
+                <span asp-validation-for="FruitName" class="text-danger"></span>
+            </div>
+
+            <div class="d-grid mt-4">
+                <input type="submit" value="Create" class="btn btn-primary btn-block" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="mt-4">
+    <a asp-action="Indexfruits" class="btn btn-outline-secondary">Back to List</a>
+</div>
